@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const columnsController = require('../controllers/columns.controller');
 
-// write your routes here
+router.get('/', columnsController.list);
+router.post('/', columnsController.create);
+router.get('/:id', columnsController.detail);
+router.put('/:id', columnsController.update);
+router.delete('/:id', columnsController.delete);
 
 module.exports = router;
